@@ -14,11 +14,6 @@ pipeline {
         sh 'mvn test'
       }
     }
-     stage('Package & Run') {
-      steps {
-        sh 'java -jar target/app.jar'
-      }
-    }
     stage('Front-end') {
       agent {
         docker { image 'node:16-alpine' }
